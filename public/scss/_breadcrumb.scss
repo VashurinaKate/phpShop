@@ -1,0 +1,30 @@
+.breadcrumb {
+    height: 150px;
+    background: $promo-bg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__left {
+        @include font-stack-h3;
+        font-weight: 400;
+    }
+    &__right {
+        color: #636363;
+        .path {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #636363;
+            padding: 0 5px;
+            // &:not(:last-child)::after {
+            //     content: ' \002F ';
+            // }
+            &:hover {
+                color: $emphasized-color-text;
+            }
+        }
+        .active {
+            color: $emphasized-color-text;
+            font-weight: 600;
+        }
+    }
+}

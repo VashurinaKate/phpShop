@@ -1,0 +1,27 @@
+.feature {
+    background: $menu-bg;
+    &__wrap {
+        display: flex;
+        min-height: 341px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+    &__media {
+        text-align: center;
+        color: white;
+        h2 {
+            line-height: 23px;
+            margin: 20px 0;
+            font-weight: 400;
+        }
+        p {font-weight: 300;}
+    }
+    &__icon img {
+        transition: all 0.6s;
+        transition-timing-function:  cubic-bezier(.59,.29,.83,.44);
+    }
+    &__icon img:hover {
+        transform: rotate(360deg);
+    }
+}

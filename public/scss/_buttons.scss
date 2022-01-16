@@ -1,0 +1,41 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    width: 211px;
+    line-height: 47px;
+    color: $emphasized-color-text;
+    text-transform: capitalize;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid $emphasized-color-text;
+    transition: all 200ms;
+    cursor: pointer;
+    &--main {
+        svg {
+            path {fill: $emphasized-color-text;}
+        }
+    }
+    &--main:hover {
+        color: white;
+        background: $emphasized-color-text;
+        path {fill: white;}
+    }
+    &--cart {
+        border: 1px solid white;
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+    &--simple {
+        border: 1px solid $light-text-color;
+        color: $menu-bg;
+        &:hover {
+            border: 1px solid $emphasized-color-text;
+            color: white;
+            background: $emphasized-color-text;
+        }
+    }
+}

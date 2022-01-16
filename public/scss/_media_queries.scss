@@ -1,0 +1,186 @@
+@media screen and (max-width: 1160px) {
+    .header,
+    .footer,
+    .breadcrumb {padding: 0 32px;}
+    .sale,
+    .cart,
+    .registration {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .registration {
+        gap: 22px;
+        &__text,
+        &__list,
+        &__heading {font-size: 16px;}
+    }
+    .products {
+        padding: 0 16px;
+        &__items {
+            grid-template-columns: 360px 360px;
+            grid-gap: 16px;
+        }
+    }
+    .feature {
+        &__wrap {
+            flex-direction: column;
+            padding: 50px 0 64px 0;
+        }
+        &__media {max-width: 360px;}
+    }
+    .subscribe {
+        flex-direction: column;
+        &__info {margin: 64px 0 48px 0;}
+        &__form {margin-bottom: 64px;}
+    }
+}
+@media screen and (max-width: 960px) {
+    .cart {
+        flex-direction: column;
+        padding: 18px;
+        box-sizing: border-box;
+        &__items {margin: 0 auto;}
+        &__form {
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+        }
+    }
+    .breadcrumb {
+        padding: 0 16px;
+    }
+    .sort {
+        margin: 0 16px 0 auto;
+    }
+}
+@media screen and (max-width: 760px) {
+    .promo {
+        height: 363px;
+        &__img {display: none;}
+        &__text {margin: 0 auto;}
+    }
+    .sale {
+        &__top {flex-direction: column;}
+        &__item {margin: 0 auto;}
+    }
+    .products {
+        &__items {
+            grid-template-columns: 360px;
+        }
+    }
+    .registration {
+        flex-direction: column;
+        &__left,
+        &__right {margin: 0 auto;}
+        &__right {margin-top: 25px;}
+        &__text {max-width: 360px;}
+        &__list li {
+            max-width: 333px;
+        }
+    }
+}
+@media screen and (max-width: 720px) {
+    .cart {
+        padding: 8px;
+        margin-top: 39px;
+        &__item {margin-bottom: 32px;}
+        &__form {
+            flex-direction: column;
+        }
+        &__order {margin-top: 48px;}
+        &__heading {
+            margin-bottom: 25px;
+            a {font-size: 16px;}
+        }
+        &__text {
+            padding: 15px;
+            p,
+            .quantity,
+            .price {
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+            .quantity input {font-size: 14px;}
+        }
+        .close {
+            margin: 17px 17px 0 0;
+            svg {
+                width: 11px;
+                height: 11px;
+            }
+        }
+        &__bottom {
+            .btn {
+                max-width: 165px;
+                height: 33px;
+                font-size: 12px;
+                text-transform: none;
+            }
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+    .header,
+    .footer {padding: 0 16px;}
+    .header {
+        &__icons:not(:first-child) {display: none;}
+        &__icons:first-child {margin-right: 0;}
+    }
+    .breadcrumb {
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+    }
+    .filtration {
+        &__summary {
+            padding: 8px;
+            p {display: none;}
+            svg {
+                width: 36px;
+                height: 23px;
+                margin-left: 0;
+            }
+        }
+    }
+    .sort {
+        gap: 15px;
+        padding: 12px 0;
+    }
+    .promo {
+        &__text {max-width: 263px;}
+        &__h1 {
+            font-size: 38px;
+            font-weight: 900}
+        &__h2 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+    .sale {
+        margin-top: 64px;
+        &__item {max-width: 343px;}
+    }
+    .product__slider {
+        &-next,
+        &-prev {top: 18%;}
+        &-img {width: 100%;}
+        .product__detail {
+            hr {
+                margin: 32px auto;
+                max-width: 175px;
+            }
+        }
+    }
+    .subscribe {
+        &__form {
+            input[name="email"] {width: 230px;}
+            input[type="submit"] {width: 94px;}
+        }
+    }
+    .footer {
+        flex-direction: column-reverse;
+        padding: 43px 0 10px 0;
+        height: auto;
+        p {font-size: 16px;}
+    }
+}

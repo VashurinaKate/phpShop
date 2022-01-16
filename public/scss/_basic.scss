@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+.center {
+    padding-left: calc(50% - 570px);
+    padding-right: calc(50% - 570px);
+}
+input,
+textarea {outline: none;}
+hr {
+    height: 1px;
+    border: none;
+    background: $main-bg;
+}

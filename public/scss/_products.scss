@@ -1,0 +1,88 @@
+.products {
+    margin-bottom: 96px;
+    &__heading {
+        text-align: center;
+        margin-bottom: 48px;
+        p {
+            color: $light-text-color;
+            margin-top: 6px;
+        }
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: 360px 360px 360px;
+        justify-content: center;
+        grid-gap: 30px;
+        margin-bottom: 50px;
+    }
+    &__item {
+        background: $product-body-bg;
+        position: relative;
+        max-width: 360px;
+        &-img {
+            width: 100%;
+            // a {display: flex;}
+            transition: all 0.3s;
+            &:hover {
+                transform: scale(1.01);
+            }
+        }
+        &-content {padding: 0 18px;}
+        &-name {
+            a {@include a-product;}
+        }
+        &-description {
+            @include p-product;
+        }
+        &-price {
+            @include price;
+            margin: 20px 0;
+        }
+        .btn {
+            position: absolute;
+            left: 21%;
+            top: 31%;
+            display: none;
+            z-index: 10;
+            &:hover {
+                background: white;
+                color: $menu-bg;
+            }
+            &:hover path {
+                fill: $menu-bg;
+            }
+        }
+        &:hover .products__item-img img {
+            filter: brightness(0.3);
+        }
+        &:hover .btn {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__bottom {
+        text-align: center;
+        margin-top: 50px;
+        .pagination {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            gap: 13px;
+            height: 44px;
+            border: 1px solid rgba(235, 235, 235, 1);
+            padding: 0 13px;
+            margin: 0 auto;
+            color: rgba(235, 235, 235, 1);
+            &__link {
+                text-decoration: none;
+                color: rgba(235, 235, 235, 1);
+                &-active {
+                    color: $emphasized-color-text;
+                }
+                &:hover {
+                    color: $emphasized-color-text;
+                }
+            }
+        }
+    }
+}

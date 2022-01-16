@@ -1,0 +1,47 @@
+.registration {
+    display: flex;
+    gap: 128px;
+    margin: 64px 0 96px 0;
+    &__input {
+        @include inputs;
+    }
+    button {
+        background: none;
+        margin: 39px 0 0 0;
+    }
+    &__form {
+        label[for="name"],
+        label[for="email"] {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            display: block;
+            color: $menu-bg;
+        }
+        label[for="male"] {
+            margin-right: 20px;
+        }
+        label[for="email"] {
+            margin-top: 33px;
+        }
+    }
+    &__helptext {
+        @include p-product;
+        max-width: 360px;
+    }
+    &__heading,
+    &__text,
+    &__list {
+        @include font-stack-a;
+        font-weight: 300;
+        text-transform: none;
+    }
+    &__text {margin-top: 20px;}
+    &__list {
+        list-style-image: url(../img/listMarker.svg);
+        margin-left: 27px;
+        li {
+            padding: 16px 0 0 20px;
+        }
+    }
+}

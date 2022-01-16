@@ -1,0 +1,80 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    background: $menu-bg;
+    position: relative;
+    &__search {
+        margin-left: 41px;
+    }
+    &__icons:not(:last-child) {
+        margin-right: 33px;
+    }
+    .burger {
+        cursor: pointer;
+        }
+    &__right details {
+        display: inline-block;
+        summary {margin-right: 32px;}
+        ::-webkit-details-marker {display: none;}
+        .dropdown {
+            position: absolute;
+            margin-top: 21px;
+            right: 0;
+            max-width: 232px;
+            background: white;
+            padding: 32px;
+            box-shadow: $shadow;
+            z-index: 10;
+            svg {
+                position: absolute;
+                right: 16px;
+                top: 16px;
+                width: 12px;
+            }
+            &__heading {
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            &__subheading {
+                font-size: 14px;
+                font-weight: 400;
+                margin-top: 24px;
+                text-transform: uppercase;
+                color: $emphasized-color-text;
+            }
+            &__list {
+                li {
+                    list-style-type: none;
+                    margin: 11px 0 11px 20px;
+                    color: #6F6E6E;
+                    ;
+                }
+            }
+        }
+    }
+    .cart-icon {position: relative;}
+    .cart-icon::before {
+        content: "5";
+        position: absolute;
+        // display: none;
+        opacity: 0;
+        transition: all 0.2s;
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        background: $emphasized-color-text;
+        color: white;
+        text-align: center;
+        font-size: 12px;
+        line-height: 19px;
+        right: -11px;
+        top: -18px;
+    }
+    .cart-icon:hover::before {
+        // display: block;
+        opacity: 1;
+    }
+}

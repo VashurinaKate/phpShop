@@ -1,0 +1,119 @@
+.cart {
+    display: flex;
+    justify-content: space-between;
+    margin: 96px 0 128px 0;
+    gap: 30px;
+    &__item {
+        display: flex;
+        box-shadow: $shadow;
+        max-width: 652px;
+        margin-bottom: 40px;
+    }
+    &__img {
+        width: 100%;
+        display: flex;
+    }
+    &__text {
+        padding: 22px 31px;
+        box-sizing: border-box;
+        .price {
+            @include price;
+            font-size: 22px;
+        }
+        p,
+        .quantity {
+            font-size: 22px;
+            line-height: 26px;
+            color: #575757;
+            margin-bottom: 6px;
+        }
+        .quantity {
+            display: flex;
+            gap: 24px;
+            input {
+                border: 1px solid $main-bg;
+                width: 44px;
+                height: 25px;
+                text-align: center;
+                font-size: 18px;
+                color: #575757;
+                position: relative;
+            }
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+    &__heading {
+        margin-bottom: 42px;
+        a {
+            @include font-stack-a;
+        }
+    }
+    .close {
+        margin: 28px 22px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        &:hover path {
+            fill: $emphasized-color-text;
+        }
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 9px;
+        .btn {
+            margin: 0;
+            text-transform: uppercase;
+        }
+    }
+
+    &__form {
+        &-heading {
+            @include a-product;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        input {
+            @include inputs;
+        }
+        input[type="submit"] {
+            width: 102px;
+            height: 35px;
+            padding-left: 0;
+            text-align: center;
+            background: none;
+            cursor: pointer;
+        }
+    }
+    &__order {
+        background: #F5F3F3;
+        max-width: 360px;
+        box-sizing: border-box;
+        padding: 42px;
+        margin-top: 57px;
+        hr {
+            margin: 17px 0;
+        background: $light-text-color;}
+    }
+    &__grandtotal {
+        font-size: 16px;
+        font-weight: 300;
+        color: $menu-bg;
+        text-align: right;
+        span {
+            @include price;
+            margin-left: 20px;
+        }
+    }
+    &__subtotal {
+        font-size: 11px;
+        color: $menu-bg;
+        text-align: right;
+        margin-bottom: 12px;
+        span {margin-left: 20px;}
+    }
+}

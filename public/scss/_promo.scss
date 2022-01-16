@@ -1,0 +1,24 @@
+.promo {
+    background: $promo-bg;
+    display: flex;
+    padding-left: calc(50% - 800px);
+    padding-right: calc(50% - 800px);
+
+    &__img {
+        width: 50%;
+    }
+    &__photo {
+        width: 100%;
+        display: flex;
+    }
+    &__h1 {@include font-stack-h1;}
+    &__h2 {
+        @include font-stack-h2;
+        &__span {color: $emphasized-color-text;}
+    }
+    &__text {align-self: center;}
+    &__content {
+        border-left: 12px solid $emphasized-color-text;
+        padding-left: 16px;
+    }
+}

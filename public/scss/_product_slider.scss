@@ -1,0 +1,87 @@
+.product__slider {
+    position: relative;
+    &-prev,
+    &-next {
+        width: 47px;
+        height: 47px;
+        background: rgba(42, 42, 42, 0.15);
+        position: absolute;
+        top: 27%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+            path {fill: $emphasized-color-text;}
+        }
+    }
+    &-prev {left: 0;}
+    &-next {right: 0;}
+    &-top {
+        background: $product-body-bg;
+        padding-bottom: 65px;
+    }
+    &-img {
+        width: 50%;
+        margin: 0 auto;
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+    .product__detail {
+        background: white;
+        border: 1px solid $main-bg;
+        max-width: 1140px;
+        margin: -65px auto 128px auto;
+        text-align: center;
+        padding: 65px 0;
+        &-heading {
+            h3 {
+                text-transform: uppercase;
+                color: $emphasized-color-text;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 17px;
+                &::after {
+                    content: '';
+                    width: 63px;
+                    border-bottom: 3px solid $emphasized-color-text;
+                    margin: 12px auto;
+                    display: block;
+                }
+            }
+            p {
+                font-size: 18px;
+                font-weight: 300;
+                text-transform: uppercase;
+                color: #4D4D4D;
+            }
+        }
+        &-text {
+            p {
+                @include p-product;
+                margin: 48px auto 33px auto;
+                max-width: 555px;
+            }
+        }
+        &-price {
+            @include font-stack-h3;
+            font-weight: 300;
+        }
+        hr {
+            margin: 65px auto;
+            max-width: 642px;
+        }
+        .sort {
+            justify-content: center;
+            margin-bottom: 49px;
+            details {
+                .size-form {
+                    left: 0;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

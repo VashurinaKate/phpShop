@@ -1,0 +1,27 @@
+footer {
+    .footer {
+        height: 80px;
+        background: $menu-bg;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {color: white;}
+        .social {
+            display: flex;
+            gap: 8px;
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 32px;
+                height: 32px;
+                background: white;
+                transition: all 200ms;
+                &:hover {
+                    background: $emphasized-color-text;
+                    svg {path {fill: white;}}
+                }
+            }
+        }
+    }
+}
