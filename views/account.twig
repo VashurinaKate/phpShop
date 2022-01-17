@@ -1,7 +1,7 @@
 {# {% session_start() %} #}
 <section class="registration center">
     <p>{% if info is defined %} {{ info }} {% endif %}</p>
-    <h1>Welcome, {{ userData }}</h1>
+    <h1>Welcome, {{ userData['name'] }}</h1>
     <div>
         {# <?php
         foreach ($userData as $user): ?>

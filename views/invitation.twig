@@ -1,5 +1,5 @@
 <section class="registration center">
-    <h1><?=$info?></h1>
+    <h1>{% if info is defined %} {{ info }} {% endif %}</h1>
     <div class="registration__left">
         <a href="?action=auth&controller=user">Вход</a><br>
         <a href="?action=reg&controller=user">Регистрация</a>

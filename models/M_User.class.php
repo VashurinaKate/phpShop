@@ -5,7 +5,6 @@ class M_User {
     // public function __construct(){}
     public function setPass($email, $password) {
 	    return strrev(md5($email)) . md5($password);
-        // return $password;
     }
 
     public function getUserData($id)
@@ -20,18 +19,18 @@ class M_User {
         $res = M_Pdo::Instance() -> Select($query);
         if ($res) {
             if ($res['password'] == $this -> setPass($email, $password)) {
-                $_SESSION['user_id'] = $res['id'];
-                // return 'Добро пожаловать в систему, ' . $res['name'] . '!';
-                return true;
+            $_SESSION['user_id'] = $res['id'];
+            //     return 'Добро пожаловать в систему, ' . $res['name'] . '!';
+            return true;
             } else {
-                // return 'Пароль не верный!';
+            //     return 'Пароль не верный!';
                 return false;
             }
         } 
-        // else {
-        //     // return 'Пользователь с таким логином не зарегистрирован!';
-        //     return false;
-        // }
+        else {
+            // return 'Пользователь с таким логином не зарегистрирован!';
+            return false;
+        }
     }
 
     function logout() {
@@ -50,9 +49,8 @@ class M_User {
               'email' => $email,
               'password' => $password
             ];
-            $result = M_Pdo::Instance() -> Insert('users', $object);
-            // if (is_numeric($res)) {
-            if ($result) {
+            $res = M_Pdo::Instance() -> Insert('users', $object);
+            if (is_numeric($res)) {
                 // return "regUser(): Регистрация прошла успешно.";
                 return true;
             } else {

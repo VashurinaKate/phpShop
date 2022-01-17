@@ -1,13 +1,11 @@
 <?php
-include_once('models/M_User.class.php');
-
 class User extends Base {
 	public function action_invite() {
-		$this->title .= 'Приглашение';
+		$this->title .= 'Welcome';
 		$loader = new Twig_Loader_Filesystem('views'); 
         $twig = new Twig_Environment($loader);
 		$template = $twig -> loadTemplate('invitation.twig');
-		echo $template -> render(array());
+		echo $template -> render(array()); // как можно определить $this->content?
 	}
 
 	public function action_account() {
@@ -34,8 +32,19 @@ class User extends Base {
 
 		$loader = new Twig_Loader_Filesystem('views'); 
         $twig = new Twig_Environment($loader);
+		$template = $twig -> loadTemplate('regForm.twig');
 
-		if ($_POST) {
+		// if ($this -> IsPost()) {
+		// 	// $user = new M_User();
+		// 	$info = "Вы успешно зарегистрированы!";
+		// 	$res = $user -> regUser($_POST['name'], $_POST['surname'], $_POST['email'], $_POST['password']);
+		// 	echo $template -> render(array('content' => $res, 'info' => $info));
+		// } else {
+		// 	$info = 'Что-то пошло не так, попробуйте еще раз';
+		// 	echo $template -> render(array('info' => $info));
+		// }
+
+		if ($this -> IsPost()) {
 			if ($user->regUser($_POST['name'], $_POST['surname'], $_POST['email'], $_POST['password'])) {
 				$info = "Вы успешно зарегистрированы!";
 				$template = $twig -> loadTemplate('invitation.twig');
@@ -44,16 +53,15 @@ class User extends Base {
 				);
 				echo $template -> render($vars);
 			} else {
-				$info = 'Что-то пошло не так, попробуйте еще раз';
+				$info = 'Пользователь с таким логином уже существует'; // ?????
 				$template = $twig -> loadTemplate('regForm.twig');
-				$vars = array(
-					'info' => $info
-				);
+				$vars = array('info' => $info);
 				echo $template -> render($vars);
 			}
 		} else {
+			$info = 'Что-то пошло не так, попробуйте еще раз'; // ?????
 			$template = $twig -> loadTemplate('regForm.twig');
-			echo $template -> render(array());
+			echo $template -> render(array('info' => $info));
 		}
 	}
 

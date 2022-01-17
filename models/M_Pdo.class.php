@@ -3,7 +3,7 @@
 class M_Pdo {
     private static $instance;
     private $db;
-	
+
     public static function Instance()
     {
         if (self::$instance == null) {
@@ -11,7 +11,7 @@ class M_Pdo {
         }
         return self::$instance;
     }
-    
+
     private function __construct()
     {
         setlocale(LC_ALL, 'ru_RU.UTF8');	
@@ -19,7 +19,7 @@ class M_Pdo {
         $this->db->exec('SET NAMES UTF8');
         $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
-    
+
     public function Select($query) {
         $sql = $this->db->prepare($query);
         $sql->execute();
@@ -28,27 +28,28 @@ class M_Pdo {
         //     $info = $sql->errorInfo();
         //     die($info[2]); 
         // }
-        
+
         return $sql->fetch();
     }
-    
+
     public function Insert ($table, $object) {
         $columns = array();
 
         foreach ($object as $key => $value) {
             $columns[] = $key;
-            $masks[] = "'$value'";
+            // $masks[] = "'$value'";
+            $masks[] = ":$key";
             
             if ($value === null) {
                 $object[$key] = 'NULL';
             }
         }
-            
+
         $columns_s = implode(',', $columns);
         $masks_s = implode(',', $masks);
-            
+
         $query = "INSERT INTO $table ($columns_s) VALUES ($masks_s)";
-            
+
         $q = $this -> db -> prepare($query);
         $q->execute($object);
 
@@ -57,7 +58,6 @@ class M_Pdo {
             // die($info[2]);
             die(print_r($object));
         }
-            
         return $this -> db -> lastInsertId();		
     }
 	
@@ -83,7 +83,7 @@ class M_Pdo {
 
         return $q->rowCount();
     }
-	
+
     public function Delete ($table, $where) {
         $query = "DELETE FROM $table WHERE $where";
         $q = $this->db->prepare($query);
